@@ -1,0 +1,121 @@
+09 - MARKETING FUNNEL & SELLER ACQUISITION
+==========================================
+
+A. Funnel overview
+------------------
+  - Marketing-qualified leads (MQLs): 8,000
+  - Closed (became sellers): 842 = 10.5% conversion
+  - Landing pages used: 495
+  - MQL first-contact window: 2017-06-14 to 2018-05-31
+  - Median days from first contact to won: 15
+  - Mean days: 49
+  - Closed within 30 days: 65.0%
+  - Closed after 90+ days: 17.9%
+
+B. Lead origin: volume vs conversion
+------------------------------------
+
+                   leads  closed  conv_%  share_of_leads_%  share_of_closed_%
+origin                                                                       
+organic_search      2296     271    11.8              28.7               32.2
+paid_search         1586     195    12.3              19.8               23.2
+social              1350      75     5.6              16.9                8.9
+unknown             1099     179    16.3              13.7               21.3
+direct_traffic       499      56    11.2               6.2                6.7
+email                493      15     3.0               6.2                1.8
+referral             284      24     8.5               3.6                2.9
+other                150       4     2.7               1.9                0.5
+display              118       6     5.1               1.5                0.7
+other_publicities     65       3     4.6               0.8                0.4
+missing               60      14    23.3               0.8                1.7
+
+  - Best converting identified origin (100+ leads; excl. unknown/other): paid_search (12.3%)
+  - Weakest identified origin (100+ leads): email (3.0%)
+  - Origin = unknown converts at: 16.3% (tracking gap: 13.7% of leads have no known source)
+  - Organic + paid search share of leads: 48.5%
+
+C. Landing pages
+----------------
+  - Landing pages with 100+ leads: 11
+  - Share of leads from top 5 landing pages: 39.1%
+
+                 leads  closed  conv_%
+landing_page_id                       
+40dec9f3...        330      67    20.3
+22c29808...        883     174    19.7
+b76ef374...        912     171    18.8
+ce1a65ab...        394      59    15.0
+241f79c7...        109      14    12.8
+
+  - Conversion range for pages with 100+ leads: 3.4% - 20.3%
+
+D. Who gets won? (closed leads)
+-------------------------------
+
+business_segment (top 8):
+
+                                 closed  share_%
+business_segment                                
+home_decor                          105     12.5
+health_beauty                        93     11.0
+car_accessories                      77      9.1
+household_utilities                  71      8.4
+construction_tools_house_garden      69      8.2
+audio_video_electronics              64      7.6
+computers                            34      4.0
+pet                                  30      3.6
+
+
+lead_type (top 8):
+
+                 closed  share_%
+lead_type                       
+online_medium       332     39.4
+online_big          126     15.0
+industry            123     14.6
+offline             104     12.4
+online_small         77      9.1
+online_beginner      57      6.8
+online_top           14      1.7
+NaN                   6      0.7
+
+
+business_type (top 8):
+
+               closed  share_%
+business_type                 
+reseller          587     69.7
+manufacturer      242     28.7
+NaN                10      1.2
+other               3      0.4
+
+
+lead_behaviour_profile (DISC-style animal personas):
+
+                        closed  share_%
+lead_behaviour_profile                 
+cat                        407     48.3
+not recorded               177     21.0
+eagle                      123     14.6
+wolf                        95     11.3
+shark                       24      2.9
+cat, wolf                    8      1.0
+
+  - Profile missing: 177 (21.0%)
+  - Resellers vs manufacturers: 587 vs 242
+  - Closed leads declaring monthly revenue > 0: 45 of 842
+  - Declared monthly revenue - median of those > 0: R$ 50,000
+  Caution: declared_monthly_revenue has extreme outliers (max R$ 50 million) and 95% zeros - not reliable.
+
+E. Do won leads turn into selling sellers? (link funnel -> orders)
+------------------------------------------------------------------
+  - Closed leads that appear in the sellers table: 380 of 842 (45.1%)
+  - ...of which made at least one valid sale: 379
+  - GMV from those sellers: R$ 674,005 = 5.0% of all GMV
+  - Median GMV per won seller (with sales): R$ 548
+  - Median GMV per all other seller: R$ 917  (not like-for-like: won sellers joined later, so had less time to sell)
+  - Won sellers whose first sale came AFTER the won date: 379 of 379
+  - Median days from won date to first sale (those): 44
+  NOTE: won_date goes to Nov 2018, orders end Oct 2018, so the funnel's later cohorts cannot be observed selling.
+
+Related graphs: 25_funnel_leads_and_conversion_by_origin.png, 26_funnel_sales_cycle_and_stages.png, 27_closed_leads_profile.png

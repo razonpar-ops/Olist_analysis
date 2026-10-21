@@ -1,0 +1,39 @@
+06 - PAYMENTS
+=============
+
+A. Payment methods
+------------------
+
+               rows  orders       value  avg_value  avg_inst  share_value_%  share_orders_%
+payment_type                                                                               
+credit_card   76795   76505  12542084.2      163.3       3.5           78.3            76.9
+boleto        19784   19784   2869361.3      145.0       1.0           17.9            19.9
+voucher        5775    3866    379436.9       65.7       1.0            2.4             3.9
+debit_card     1529    1528    217989.8      142.6       1.0            1.4             1.5
+not_defined       3       3         0.0        0.0       1.0            0.0             0.0
+
+  - Total paid (all orders): R$ 16,008,872
+  - Credit card share of money: 78.3%
+  - Boleto (bank slip) share of money: 17.9%
+  - Orders paid with 2+ payment records: 2961 (3.0%)
+  - Orders using a voucher together with another method: 2245
+
+B. Credit-card instalments
+--------------------------
+  - Credit-card payments paid in 1 instalment: 33.1%
+  - 2+ instalments: 66.9%
+  - 6+ instalments: 21.0%
+  - 10 instalments (a common cap): 6.9%
+  - Average instalments: 3.51
+
+       payments  avg_value_R$  median_value_R$
+b                                             
+1x        25455          95.9             67.9
+2-3x      22874         134.2            109.7
+4-6x      16257         181.3            127.5
+7-10x     11866         333.8            205.8
+11x+        341         358.3            214.6
+
+  => Instalments grow with ticket size: Brazilians finance bigger purchases on cards ('parcelamento').
+
+Related graph: 16_payment_methods_and_instalments.png

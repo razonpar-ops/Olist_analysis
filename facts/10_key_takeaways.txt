@@ -1,0 +1,46 @@
+10 - THE 16 FACTS TO REMEMBER
+=============================
+Every number below is computed in analysis.py and detailed in the other fact files.
+
+ 1. SCALE: 99,441 orders from Sep 2016 to Oct 2018, 96,096 unique customers, 3,053 active sellers, GMV of R$ 13,494,401 (item prices) plus R$ 2,241,126 in freight.
+
+ 2. GROWTH: Jan-Aug 2018 had 135% more orders and 138% more GMV than Jan-Aug 2017. Orders plateaued at about 6-7K per month through 2018.
+
+ 3. VOLUME-DRIVEN: baskets did not grow - order value and items per order stayed flat. Growth = more orders.
+
+ 4. BLACK FRIDAY: 1,176 orders on 24 Nov 2017, the single biggest day in the dataset.
+
+ 5. CONCENTRATION (geography): São Paulo is 42% of orders; SP+RJ+MG are 66%.
+
+ 6. RETENTION: only 3.1% of customers ever ordered twice - this is a one-off-purchase marketplace.
+
+ 7. CATEGORIES: 'health_beauty' is #1 at 9.3% of GMV; the top 10 categories are 62% of GMV.
+
+ 8. PAYMENTS: credit cards are 78% of money paid, boleto 18%; 67% of card payments use 2+ instalments.
+
+ 9. SELLER CONCENTRATION: the top 10% of sellers earn 67% of GMV (Gini 0.79).
+
+10. DELIVERY: average 12.6 days (median 10.2); customers were promised 23.7 days, i.e. goods arrive ~12 days earlier than promised.
+
+11. LATE RATE: 6.8% of delivered orders arrive after the estimated date; worst month was 2018-03 at 19.0%.
+
+12. GEOGRAPHY OF WAIT: 64% of items cross state lines (15.0 days vs 7.9 days same-state); AL waits 24 days vs 9 in SP.
+
+13. SATISFACTION: average review 4.09/5, 58% give 5 stars, 15% give 1-2 stars.
+
+14. THE MEASURABLE DRIVER: on-time orders average 4.29 stars, late orders 2.27; 8+ days late = 1.70 stars. Late orders are 54% 1-star vs 7% for on-time.
+
+15. FUNNEL: 8,000 qualified leads -> 842 won (10.5%), median 15 days to close; best identified channel 'paid search' (12.3%), weakest 'email' (3.0%).
+
+16. HIDDEN RISK: the 1,263 orders with items from 2+ sellers average only 2.86 stars vs 4.13 for single-seller orders.
+
+
+Suggested actions the data supports
+-----------------------------------
+  1. Fix the last mile first: late delivery is the biggest controllable cause of 1-star reviews.
+  2. Grow repeat purchase: with <4% repeaters, small retention gains are worth more than extra ad spend.
+  3. Recruit sellers outside São Paulo to shorten distance, delivery time and freight for the other states.
+  4. Watch seller quality: a small number of sellers drive most revenue, so their service level sets the platform's reputation.
+  5. Prepare for peaks: lateness jumped in Nov 2017 (Black Friday) and Feb-Mar 2018 - add carrier capacity before promotional events and investigate the early-2018 spike.
+  6. Investigate multi-seller orders: they are rare (1.3%) but score about 1.3 stars lower.
+  7. Put more recruiting effort into the channels that convert best and re-examine the weakest ones.

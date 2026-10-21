@@ -1,0 +1,101 @@
+07 - DELIVERY & LOGISTICS
+=========================
+
+A. Delivery performance (delivered orders)
+------------------------------------------
+  - Orders analysed: 96,470
+  - Average purchase -> delivered: 12.6 days
+  - Median: 10.2 days
+  - 90th percentile: 23.1 days
+  - 99th percentile: 46 days
+  - Delivered within 7 days: 27.0%
+  - Delivered within 14 days: 68.7%
+  - Took longer than 30 days: 4.7%
+  - Average ESTIMATED delivery time promised to customer: 23.7 days
+  - Average days earlier than estimate: 11.9 days
+  - Orders delivered LATE (after estimated day): 6,534 (6.8%)
+  - Average lateness of late orders: 10.6 days
+  - Late by more than 7 days: 3.0% of all delivered orders
+  => Estimates are very conservative: on average customers receive goods ~12 days BEFORE the estimated date.
+
+B. Where do the days go? (orders with clean timestamps)
+-------------------------------------------------------
+  - Orders used: 95,082 of 96,470
+
+        approval  seller_handling  transit
+mean         0.4              2.9      9.4
+median       0.0              1.8      7.1
+
+  - Share of mean total time spent in carrier transit: 74.2%
+  => Carrier transit is the biggest block of the wait; seller handling averages 2.9 days and payment approval under half a day.
+
+C. By customer state (delivered orders; states with 300+ orders)
+----------------------------------------------------------------
+
+                orders  mean_days  median_days  late_pct
+customer_state                                          
+SP               40494        8.8          7.2       4.5
+MG               11354       12.0         10.3       4.6
+PR                4923       12.0         10.4       4.0
+DF                2080       13.0         11.4       5.7
+SC                3546       15.0         13.0       8.2
+RS                5344       15.3         13.2       6.1
+RJ               12350       15.3         12.0      12.1
+GO                1957       15.6         13.9       6.5
+MS                 701       15.6         13.9       9.7
+ES                1995       15.8         13.6      10.7
+MT                 886       18.1         16.1       6.0
+PE                1593       18.4         15.7       9.6
+RN                 474       19.3         16.1       9.3
+BA                3256       19.3         16.9      12.2
+PI                 476       19.5         16.3      13.9
+PB                 517       20.4         18.2      10.4
+CE                1279       21.3         18.2      13.8
+SE                 335       21.5         18.0      15.2
+MA                 717       21.6         19.2      17.4
+PA                 946       23.8         21.1      11.2
+AL                 397       24.5         22.3      21.4
+
+  - Fastest big state: SP (8.8 days)
+  - Slowest big state: AL (24.5 days)
+  - Highest late rate (300+ orders): AL (21.4%)
+  - Slowest state vs SP: 2.8x as long
+
+D. Same-state vs cross-state shipping (item level, delivered)
+-------------------------------------------------------------
+
+             items  days  late  freight  share_of_items_%
+cross-state  70328  15.0   7.8     23.6              63.8
+same-state   39861   7.9   4.4     13.4              36.2
+
+  - Share of items shipped across state lines: 63.8%
+
+E. Monthly late rate
+--------------------
+
+         late_%  avg_days     n
+ym                             
+2017-01     2.9      12.6   750
+2017-02     3.0      13.2  1653
+2017-03     4.6      13.0  2546
+2017-04     6.6      14.9  2303
+2017-05     3.0      11.3  3545
+2017-06     3.0      12.0  3135
+2017-07     2.8      11.6  3872
+2017-08     2.9      11.1  4193
+2017-09     4.4      11.9  4150
+2017-10     4.2      11.9  4478
+2017-11    12.4      15.2  7288
+2017-12     7.5      15.4  5513
+2018-01     5.7      14.1  7069
+2018-02    14.1      16.9  6555
+2018-03    19.0      16.3  7003
+2018-04     4.5      11.5  6798
+2018-05     6.6      11.4  6749
+2018-06     1.2       9.2  6096
+2018-07     3.4       9.0  6156
+2018-08     6.2       7.7  6351
+
+  - Worst month for lateness: 2018-03 (19.0% late)
+
+Related graphs: 17_delivery_promised_vs_actual.png, 18_delivery_days_by_state.png, 19_same_vs_cross_state_and_monthly_lateness.png

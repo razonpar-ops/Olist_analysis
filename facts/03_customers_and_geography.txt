@@ -1,0 +1,79 @@
+03 - CUSTOMERS & GEOGRAPHY
+==========================
+
+A. Who are the customers?
+-------------------------
+  - Unique customers (people): 96,096
+  - customer_id rows (one per order): 99,441
+  - Customers with exactly 1 order: 93,099 (96.9%)
+  - Repeat customers (2+ orders): 2,997 (3.1%)
+  - Max orders by one customer: 17
+  - Median days between 1st and 2nd order (repeaters): 27 days (mean 80)
+  - Repeaters who re-ordered on the SAME day: 30.9%
+  - Repeaters who re-ordered within 30 days: 51.4%
+  - Share of GMV from repeat customers: 5.7%
+  => Olist behaves like a marketplace of one-off purchases: loyalty / retention is the largest untapped lever.
+
+B. Where do customers live? (valid orders)
+------------------------------------------
+
+                orders        gmv  customers  share_orders_%  share_gmv_%  aov_R$
+customer_state                                                                   
+SP               41127  5163867.0      39749            41.9         38.3   125.6
+RJ               12698  1811623.0      12242            12.9         13.4   142.7
+MG               11496  1573508.0      11134            11.7         11.7   136.9
+RS                5417   742560.0       5234             5.5          5.5   137.1
+PR                4983   676883.0       4825             5.1          5.0   135.8
+SC                3600   518578.0       3502             3.7          3.8   144.0
+BA                3344   507109.0       3244             3.4          3.8   151.6
+DF                2121   300886.0       2058             2.2          2.2   141.9
+ES                2018   273532.0       1950             2.1          2.0   135.5
+GO                1998   287870.0       1934             2.0          2.1   144.1
+PE                1643   261740.0       1600             1.7          1.9   159.3
+CE                1323   226264.0       1301             1.3          1.7   171.0
+PA                 969   178821.0        944             1.0          1.3   184.5
+MT                 902   156314.0        872             0.9          1.2   173.3
+MA                 736   119292.0        715             0.7          0.9   162.1
+MS                 708   116755.0        687             0.7          0.9   164.9
+PB                 531   114874.0        516             0.5          0.9   216.3
+PI                 490    86660.0        478             0.5          0.6   176.9
+RN                 482    83035.0        471             0.5          0.6   172.3
+AL                 411    80315.0        399             0.4          0.6   195.4
+SE                 345    58921.0        338             0.4          0.4   170.8
+TO                 278    49408.0        271             0.3          0.4   177.7
+RO                 246    46032.0        234             0.3          0.3   187.1
+AM                 147    22357.0        142             0.1          0.2   152.1
+AC                  81    15983.0         77             0.1          0.1   197.3
+AP                  68    13474.0         67             0.1          0.1   198.2
+RR                  45     7739.0         44             0.0          0.1   172.0
+
+  - Number of states: 27
+  - SP + RJ + MG share of orders: 66.5%
+  - SP alone: 41.9% of orders
+  - Highest avg order value state: PB (R$ 216) - but tiny volume: 531 orders
+  - Highest AOV among states with 1,000+ orders: CE (R$ 171)
+  - Lowest AOV among states with 1,000+ orders: SP (R$ 126)
+
+C. Top 12 cities by unique customers
+------------------------------------
+
+                       customers  share_%
+customer_city                            
+sao paulo                  14984     15.6
+rio de janeiro              6620      6.9
+belo horizonte              2672      2.8
+brasilia                    2069      2.2
+curitiba                    1465      1.5
+campinas                    1398      1.5
+porto alegre                1326      1.4
+salvador                    1209      1.3
+guarulhos                   1153      1.2
+sao bernardo do campo        908      0.9
+niteroi                      811      0.8
+santo andre                  769      0.8
+
+  - Distinct cities with customers: 4,119
+  - Top 10 cities share of customers: 35.2%
+  - Sao Paulo + Rio together: 22.5%
+
+Related graphs: 07_orders_by_state.png, 08_map_customers_and_sellers.png, 09_new_vs_returning_customers.png

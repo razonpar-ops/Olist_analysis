@@ -1,0 +1,121 @@
+08 - REVIEWS & CUSTOMER SATISFACTION
+====================================
+
+A. Score distribution (one review per order)
+--------------------------------------------
+
+              orders  share_%
+review_score                 
+1              11366     11.5
+2               3129      3.2
+3               8133      8.2
+4              19044     19.3
+5              57001     57.8
+
+  - Average score: 4.09
+  - Median: 5
+  - 5-star share: 57.8%
+  - 4+ stars (satisfied): 77.1%
+  - 1-2 stars (unhappy): 14.7%
+  - Orders with a written comment: 41.3%
+  - Comment rate for 1-star vs 5-star: 76.6% vs 35.9%
+  - Review coverage (orders with a review): 99.2%
+  - Median days between survey sent and answered: 1.7
+  Note: the distribution is U-shaped/J-shaped: many 5s, a distinct bump of 1s, very few 2s.
+
+B. Review score vs delivery punctuality (delivered orders)
+----------------------------------------------------------
+
+                      orders  avg_score  1star_%  5star_%
+bucket                                                   
+8+ days early          70929       4.32      6.5     63.6
+1-7 days early         17234       4.20      7.1     57.5
+on the estimated day    1280       4.03      8.5     50.6
+1-3 days late           1852       3.29     25.1     33.2
+4-7 days late           1748       2.10     58.6     14.1
+8+ days late            2781       1.70     69.9      7.0
+
+  - Avg score when on-time/early: 4.29
+  - Avg score when late: 2.27
+  - Share of 1-star reviews among late orders vs on-time: 53.8% vs 6.6%
+  - Orders 8+ days late: avg score / 1-star share: 1.70 / 69.9%
+  - Share of all 1-star reviews that were for LATE deliveries: 36.7% (while late orders are only 6.7% of orders)
+
+C. Other drivers of low scores
+------------------------------
+  - Avg score: single-item vs multi-item orders: 4.14 vs 3.61
+  - Avg score: single-seller vs multi-seller orders: 4.13 vs 2.86
+  - Multi-seller orders: count / late rate on paper / 1-star share: 1263 / 1.0% / 35.6%
+  Hypothesis (not provable here): split parcels - the recorded delivery date likely reflects only one of the shipments, so these orders look on-time while customers wait for the rest.
+  - Avg score: orders canceled / unavailable: 1.80 / 1.53
+  - Avg score: delivered orders: 4.16
+  - Avg score: 'shipped' orders (never confirmed delivered): 2.00
+  - Lowest avg score among big states: MA (3.76)
+  - Highest avg score among big states: PR (4.18)
+
+D. Categories: worst and best average review (300+ items)
+---------------------------------------------------------
+Worst 8:
+
+                       items  score  one_star
+category                                     
+office_furniture        1676   3.49      0.21
+home_confort             432   3.83      0.16
+audio                    359   3.84      0.16
+unknown                 1575   3.86      0.18
+bed_bath_table         10964   3.90      0.14
+furniture_living_room    496   3.91      0.13
+furniture_decor         8215   3.92      0.15
+home_construction        599   3.94      0.12
+
+Best 8:
+
+                        items  score  one_star
+category                                      
+books_general_interest    542   4.48      0.06
+luggage_accessories      1084   4.33      0.07
+food                      494   4.22      0.10
+stationery               2488   4.21      0.10
+pet_shop                 1932   4.19      0.10
+musical_instruments       663   4.19      0.09
+toys                     4049   4.18      0.10
+small_appliances          666   4.18      0.11
+
+
+E. What people write: % of commented reviews that mention each theme
+--------------------------------------------------------------------
+  - Commented reviews analysed: 40,773 (1-star: 8,707, 5-star: 20,447)
+
+                                                1-star_%  3-star_%  5-star_%
+theme                                                                       
+did not receive (não recebi)                        23.7       6.4       0.3
+delay (atraso / atrasou)                             2.8       1.9       0.3
+deadline (prazo)                                     7.7      12.9      27.5
+defect / broken (defeito, quebrado)                  4.5       3.4       0.4
+wrong item (errado / diferente)                      6.4       4.0       0.4
+refund / return (reembolso, devolv)                  7.1       2.7       0.2
+quality (qualidade)                                  3.5       4.9       8.6
+recommend (recomendo)                                3.8       4.1      17.0
+great / excellent (ótimo, excelente, perfeito)       0.3       3.3      21.3
+arrived early (antes do prazo)                       0.6       2.7      17.9
+
+  Method: simple Portuguese keyword search on lower-cased comments (not NLP/sentiment); a review can match several themes.
+
+F. Spearman correlations (delivered orders)
+-------------------------------------------
+
+                             order value  freight  items  weight (g)  instalments  delivery days  days vs estimate (+ = late)  review score
+order value                         1.00     0.47   0.18        0.53         0.37           0.10                        -0.04         -0.03
+freight                             0.47     1.00   0.38        0.49         0.23           0.38                        -0.16         -0.09
+items                               0.18     0.38   1.00        0.19         0.06          -0.03                        -0.04         -0.11
+weight (g)                          0.53     0.49   0.19        1.00         0.23           0.09                        -0.02         -0.03
+instalments                         0.37     0.23   0.06        0.23         1.00           0.05                        -0.06         -0.02
+delivery days                       0.10     0.38  -0.03        0.09         0.05           1.00                         0.31         -0.23
+days vs estimate (+ = late)        -0.04    -0.16  -0.04       -0.02        -0.06           0.31                         1.00         -0.18
+review score                       -0.03    -0.09  -0.11       -0.03        -0.02          -0.23                        -0.18          1.00
+
+  - Review score vs delivery days: -0.23 (strongest link to review score of everything measured)
+  - Review score vs days vs estimate (late): -0.18 (second strongest). Correlations are modest because most orders are early; the damage is concentrated in the late tail (see section B)
+  - Review score vs order value: -0.03 (almost no link: price does not drive satisfaction)
+
+Related graphs: 20_review_scores_and_delivery_punctuality.png, 21_lateness_vs_satisfaction.png, 22_best_and_worst_categories_by_review.png, 23_review_text_themes.png, 24_correlation_heatmap.png

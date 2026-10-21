@@ -1,0 +1,59 @@
+05 - SELLERS
+============
+
+A. Seller base
+--------------
+  - Sellers in table: 3,095
+  - Sellers with at least one valid sale: 3,053
+  - Sellers by state - top 5: SP 1849, PR 349, MG 244, SC 190, RJ 171
+  - Share of sellers located in SP: 59.7%
+  - Share of items shipped from SP sellers: 71.3%
+  - Median orders per seller: 7
+  - Mean orders per seller: 32.6
+  - Sellers with 5 or fewer orders: 1411 (46.2%)
+  - Sellers with 100+ orders: 210 (6.9%)
+  - Median distinct products per seller: 4
+
+B. Concentration
+----------------
+  - Top 1% of sellers (31): 26.2% of GMV
+  - Top 5% of sellers (153): 53.3% of GMV
+  - Top 10% of sellers (305): 67.4% of GMV
+  - Top 20% of sellers (611): 82.6% of GMV
+  - Top 50% of sellers (1526): 96.8% of GMV
+  - Gini coefficient of seller GMV (0 = equal, 1 = one seller has all): 0.79
+  - Bottom 50% of sellers: 3.2% of GMV
+
+C. Top 10 sellers by GMV
+------------------------
+
+                  gmv  orders  items  products seller_state
+4869f7a5...  229238.0    1131   1155        95           SP
+53243585...  222776.0     358    410        23           BA
+4a3ca931...  200326.0    1804   1985       399           SP
+fa1c13f2...  192842.0     584    585       289           SP
+7c67e144...  187924.0     982   1364       198           SP
+7e93a43e...  172584.0     332    336       182           SP
+da8622b1...  160237.0    1314   1551       222           SP
+7a67c85e...  141716.0    1159   1170       149           SP
+1025f0e2...  138969.0     915   1428       154           SP
+955fee92...  135160.0    1286   1498       104           SP
+
+  - Top 10 sellers combined share of GMV: 13.2%
+
+D. Seller quality (sellers with 30+ reviewed orders)
+----------------------------------------------------
+  - Sellers analysed: 628
+  - Average of seller review scores: 4.09
+  - Sellers averaging below 3.5 stars: 33 (5.3%)
+  - Sellers averaging 4.5+ stars: 54 (8.6%)
+  - Weak sellers (<3.5) share of GMV: 4.1%
+
+E. Seller base growth
+---------------------
+  - Active sellers Jan 2017: 226
+  - Active sellers Aug 2018: 1266
+  - Growth: 5.6x
+  - Sellers whose first-ever sale was in 2018: 1263 (41.4%)
+
+Related graphs: 13_seller_concentration.png, 14_sellers_vs_customers_by_state.png, 15_active_sellers_per_month.png

@@ -1,0 +1,95 @@
+02 - SALES, GROWTH & SEASONALITY
+================================
+
+A. Headline numbers (all time)
+------------------------------
+  - Orders placed: 99,441
+  - Valid orders (not canceled/unavailable): 98,207 (98.8%)
+  - Order items sold: 112,101
+  - GMV (item price, excl. freight): R$ 13,494,401
+  - Freight charged to customers: R$ 2,241,126 (= 16.6% on top of GMV)
+  - Total paid by customers (payment table, all orders): R$ 16,008,872
+  - Average order value - items only: R$ 137.42
+  - Average order value - what the customer paid (items+freight): R$ 160.99
+  - Median order value (items only): R$ 86.90
+  - Items per order (mean): 1.14
+  - Orders with exactly 1 item: 90.1%
+  - Orders containing >1 seller: 1,277
+
+B. Monthly trend (Jan 2017 - Aug 2018)
+--------------------------------------
+
+         orders     GMV_R$  avg_order_R$  items_per_order MoM_orders
+ym                                                                  
+2017-01     800   120098.0         152.6             1.21        NaN
+2017-02    1780   244959.0         142.6             1.13     122.5%
+2017-03    2682   368341.0         140.7             1.14      50.7%
+2017-04    2404   353843.0         148.9             1.12     -10.4%
+2017-05    3700   503159.0         138.2             1.13      53.9%
+2017-06    3245   429917.0         134.1             1.11     -12.3%
+2017-07    4026   492287.0         124.8             1.14      24.1%
+2017-08    4331   568246.0         133.0             1.14       7.6%
+2017-09    4285   621416.0         147.0             1.14      -1.1%
+2017-10    4631   660180.0         145.2             1.17       8.1%
+2017-11    7544  1003862.0         135.3             1.16      62.9%
+2017-12    5673   742184.0         132.1             1.12     -24.8%
+2018-01    7269   945456.0         131.6             1.14      28.1%
+2018-02    6728   837895.0         126.5             1.15      -7.4%
+2018-03    7211   981051.0         136.9             1.14       7.2%
+2018-04    6939   993593.0         143.6             1.15      -3.8%
+2018-05    6873   992872.0         145.3             1.16      -1.0%
+2018-06    6167   863266.0         140.5             1.15     -10.3%
+2018-07    6292   878044.0         140.9             1.13       2.0%
+2018-08    6512   848860.0         132.2             1.12       3.5%
+
+
+C. Year-over-year (same 8 months: Jan-Aug)
+------------------------------------------
+  - Orders Jan-Aug 2017 -> Jan-Aug 2018: 22,968 -> 53,991 (+135%)
+  - GMV Jan-Aug 2017 -> Jan-Aug 2018: R$ 3,080,851 -> R$ 7,341,037 (+138%)
+  - Average order value Jan-Aug 2017 vs 2018: R$ 136.55 vs R$ 137.14
+  => Growth came from VOLUME (more orders), not from bigger baskets.
+
+D. Peak days
+------------
+
+            orders
+date              
+2017-11-24    1176
+2017-11-25     499
+2017-11-27     403
+2017-11-26     391
+2017-11-28     380
+2018-08-06     372
+2018-05-07     372
+2018-08-07     370
+
+  - Black Friday 2017-11-24: 1,176 orders = 11.2x a typical Q4-2017 day
+
+E. Order status
+---------------
+
+              orders  share_%
+order_status                 
+delivered      96478    97.02
+shipped         1107     1.11
+canceled         625     0.63
+unavailable      609     0.61
+invoiced         314     0.32
+processing       301     0.30
+created            5     0.01
+approved           2     0.00
+
+  - Delivery success rate: 97.0%
+  - Canceled + unavailable: 1,234 (1.2%)
+
+F. When do people buy?
+----------------------
+  - Busiest weekday: Mon (16.3% of orders)
+  - Quietest weekday: Sat (10.9%)
+  - Weekday (Mon-Fri) vs weekend share: 77.0% vs 23.0%
+  - Peak hour: 16:00-17:00 (6.7%)
+  - Orders placed between 10:00 and 22:00: 75.7%
+  - Orders placed between 00:00 and 06:00: 4.8%
+
+Related graphs: 03_growth_orders_and_gmv_monthly.png, 04_basket_size_flat.png, 05_when_people_buy.png, 06_order_status.png

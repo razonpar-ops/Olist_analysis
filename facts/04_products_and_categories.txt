@@ -1,0 +1,83 @@
+04 - PRODUCTS, CATEGORIES & PRICING
+===================================
+
+A. Catalogue
+------------
+  - Distinct products: 32,951
+  - Product categories: 73
+  - Products with no category: 610 (1.9%)
+  - Median product weight: 700 g (mean 2276 g)
+  - Median photos per product: 1
+  - Median description length: 595 chars
+  - Products sold only once: 55.0%
+
+B. Top 20 categories by GMV
+---------------------------
+
+                       items        gmv  avg_price  orders  avg_freight  share_gmv_%  cum_share_%
+category                                                                                         
+health_beauty           9634  1255695.1      130.3    8800         18.9         9.31          9.3
+watches_gifts           5970  1198185.2      200.7    5604         16.8         8.88         18.2
+bed_bath_table         11097  1035964.1       93.4    9399         18.4         7.68         25.9
+sports_leisure          8590   979740.9      114.1    7673         19.5         7.26         33.1
+computers_accessories   7781   904322.0      116.2    6654         18.8         6.70         39.8
+furniture_decor         8298   727465.0       87.7    6425         20.7         5.39         45.2
+housewares              6915   626825.8       90.6    5847         21.0         4.65         49.9
+cool_stuff              3779   620770.5      164.3    3616         22.0         4.60         54.5
+auto                    4204   586585.7      139.5    3872         21.9         4.35         58.8
+garden_tools            4328   481009.9      111.1    3505         22.8         3.56         62.4
+toys                    4083   479808.5      117.5    3855         18.9         3.56         65.9
+baby                    3043   410312.2      134.8    2868         22.3         3.04         69.0
+perfumery               3402   396599.3      116.6    3146         15.9         2.94         71.9
+telephony               4527   322342.6       71.2    4183         15.7         2.39         74.3
+office_furniture        1690   273580.7      161.9    1272         40.5         2.03         76.3
+stationery              2505   229593.8       91.7    2299         18.6         1.70         78.0
+computers                203   222963.1     1098.3     181         48.5         1.65         79.7
+pet_shop                1942   213766.6      110.1    1706         20.3         1.58         81.3
+small_appliances         671   187907.3      280.0     622         23.6         1.39         82.7
+musical_instruments      669   187788.4      280.7     620         27.3         1.39         84.1
+
+  - Top 5 categories share of GMV: 39.8%
+  - Top 10 categories share of GMV: 62.4%
+  - Categories needed for 80% of GMV: 18
+  - Categories in total (excl. unknown): 73
+  - #1 by items sold: bed_bath_table (11,097 items)
+  - Most expensive avg price (100+ items sold): computers (R$ 1098)
+  - Cheapest avg price (100+ items sold): food_drink (R$ 55)
+
+C. Price distribution (per item)
+--------------------------------
+
+      price_R$
+0.10     23.80
+0.25     39.90
+0.50     74.99
+0.75    134.90
+0.90    229.80
+0.99    890.00
+
+  - Mean vs median: R$ 120.65 vs R$ 74.99 (right-skewed: a few expensive items pull the mean up)
+  - Items under R$ 100: 64.1%
+  - Items over R$ 1,000: 844 (0.75%)
+  - Share of GMV from items over R$ 500: 21.9%
+  - Most expensive item: R$ 6,735.00 (housewares)
+
+D. Freight (shipping) cost
+--------------------------
+  - Mean freight per item: R$ 19.99
+  - Median freight/price ratio: 23.1%
+  - Items where freight is MORE than the item price: 3.7%
+  - Freight-to-price (total freight / total price): 16.6%
+
+         items  median_freight  median_price  median_ratio
+wb                                                        
+<0.5kg   47486           15.10          45.0          0.30
+0.5-1kg  20494           16.11          69.9          0.22
+1-2kg    19316           17.60          89.9          0.20
+2-5kg    11444           20.13         124.9          0.16
+5-10kg    8596           24.66         129.9          0.20
+10kg+     5296           43.78         200.0          0.20
+
+  - Spearman correlation weight vs freight: 0.45
+
+Related graphs: 10_top_categories_by_gmv.png, 11_category_map_volume_vs_price.png, 12_price_distribution_and_freight.png

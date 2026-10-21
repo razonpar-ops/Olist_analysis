@@ -1,0 +1,124 @@
+01 - DATASET OVERVIEW & DATA QUALITY
+====================================
+Source: olist.sqlite (Brazilian e-commerce marketplace 'Olist' + its seller-acquisition funnel).
+
+A. The 9 + 2 tables (11 tables total)
+-------------------------------------
+
+                            table    rows  columns                                                            what it holds
+                      geolocation 1000163        5                   lat/lng points per zip-code prefix (many rows per zip)
+                      order_items  112650        7           one row per item in an order (price, freight, seller, product)
+                   order_payments  103886        5                   one row per payment instalment/method used on an order
+                           orders   99441        8                  one row per order, with status + 5 lifecycle timestamps
+                        customers   99441        5                   one row per customer_id (new id per order!) + location
+                    order_reviews   99224        7              customer satisfaction survey (1-5 stars + optional comment)
+                         products   32951        9                        product catalogue: category, size, weight, photos
+                  leads_qualified    8000        4 marketing-qualified leads (MQLs): who showed interest, via which channel
+                          sellers    3095        4                                           marketplace sellers + location
+                     leads_closed     842       14               MQLs that were won and became sellers (+ business profile)
+product_category_name_translation      71        2                                     Portuguese -> English category names
+
+  - Total rows across all tables: 1,559,764
+  - DB file size: ~112.7 MB
+
+B. Time coverage
+----------------
+  - First order: 2016-09-04 21:15:19
+  - Last order: 2018-10-17 17:30:18
+  - Months with < 1,000 orders (sparse / ramp-up / cut-off): 2016-09, 2016-10, 2016-12, 2017-01, 2018-09, 2018-10
+  - Window used for trend analysis: Jan 2017 - Aug 2018 (20 full months)
+  - Leads (MQL) first-contact range: 2017-06-14 to 2018-05-31
+  - Leads closed (won) range: 2017-12-05 to 2018-11-14
+  NOTE: 'won_date' runs past the last order date, i.e. the funnel tables and the order tables are NOT time-aligned.
+
+C. Missing values (only columns that have any)
+----------------------------------------------
+
+          table                        column  nulls  pct_null
+   leads_closed                   has_company    779      92.5
+   leads_closed                      has_gtin    778      92.4
+   leads_closed                 average_stock    776      92.2
+   leads_closed declared_product_catalog_size    773      91.8
+  order_reviews          review_comment_title  87656      88.3
+  order_reviews        review_comment_message  58247      58.7
+   leads_closed        lead_behaviour_profile    177      21.0
+         orders order_delivered_customer_date   2965       3.0
+       products            product_photos_qty    610       1.9
+       products    product_description_lenght    610       1.9
+       products           product_name_lenght    610       1.9
+       products         product_category_name    610       1.9
+         orders  order_delivered_carrier_date   1783       1.8
+   leads_closed                 business_type     10       1.2
+leads_qualified                        origin     60       0.8
+   leads_closed                     lead_type      6       0.7
+         orders             order_approved_at    160       0.2
+   leads_closed              business_segment      1       0.1
+       products              product_weight_g      2       0.0
+       products             product_length_cm      2       0.0
+       products             product_height_cm      2       0.0
+       products              product_width_cm      2       0.0
+
+  Reading guide:
+  - order_reviews.review_comment_title/message: nulls are normal - most customers leave only a star rating.
+  - orders.order_delivered_*: nulls are normal for orders that were never delivered (canceled, unavailable, in transit).
+  - products.category/name/description/photos: the same 610 products lack all four -> 'unknown' category.
+  - leads_closed has_company/has_gtin/average_stock/catalog_size: >90% empty, only ~65 closed leads have them -> too sparse to model.
+
+D. Duplicates
+-------------
+  - geolocation fully duplicated rows: 261,831 of 1,000,163 (26.2%)
+  - geolocation distinct zip prefixes: 19,015
+  - order_reviews: review_ids that appear on >1 row: 789
+  - order_reviews: orders with >1 review: 547
+  - customers: customer_id (per order) vs customer_unique_id (per person): 99,441 vs 96,096
+  => Always count PEOPLE with customer_unique_id, not customer_id.
+  - Other tables with fully duplicated rows: none
+
+E. Referential integrity (do foreign keys match?)
+-------------------------------------------------
+
+                          relationship  orphan rows
+       orders.customer_id -> customers            0
+        order_items.order_id -> orders            0
+    order_items.product_id -> products            0
+      order_items.seller_id -> sellers            0
+     order_payments.order_id -> orders            0
+      order_reviews.order_id -> orders            0
+leads_closed.mql_id -> leads_qualified            0
+
+  - Orders with NO items: 775 (mostly unavailable/canceled)
+  - Orders with NO payment record: 1
+  - Orders with NO review: 768
+  - Products whose category is not in translation table: 13 products / 2 categories (pc_gamer, portateis_cozinha_e_preparadores_de_alimentos) - mapped manually
+  - Closed leads whose seller_id exists in sellers table: 380 of 842 (45.1%)
+  - Customer zips found in geolocation: 99.72%
+  - Seller zips found in geolocation: 99.77%
+  => Core transactional tables join cleanly: no orphan keys anywhere.
+
+F. Anomalies found
+------------------
+  - Orders handed to carrier BEFORE purchase timestamp: 166
+  - Orders delivered to customer BEFORE carrier pickup date: 23
+  - 'delivered' orders with no delivery date: 8
+  - 'canceled' orders that still have a delivery date: 6
+  - Reviews created BEFORE the order was placed: 74
+  - Geolocation points outside Brazil's bounding box: 42
+  - Orders where payments != items + freight (>1 cent): 303 of 98,665 (0.31%)
+  - Payment rows with value = 0: 9
+  - Payment type 'not_defined': 3
+  - Order items with freight = 0: 383
+  - Products with weight = 0 g: 4
+  - Max single item price: R$ 6,735.00
+  - Typos in column names (kept as-is): product_name_lenght, product_description_lenght
+  - City names in geolocation: inconsistent accents/spelling ('sao paulo' vs 'são paulo') -> join on zip prefix, not on city
+
+G. How the anomalies were handled in this analysis
+--------------------------------------------------
+  - Orders with negative stage durations are excluded only from the stage-by-stage timing chart; they stay in everything else.
+  - Canceled/unavailable orders are excluded from revenue (GMV); all orders are included in status counts.
+  - One review per order (the latest) so scores are not double counted.
+  - Geolocation is averaged per zip prefix after removing points outside Brazil.
+  - Customers are counted with customer_unique_id.
+  - Trend charts use Jan 2017 - Aug 2018 only.
+
+Related graphs: 01_schema_how_tables_connect.png, 02_missing_values.png
